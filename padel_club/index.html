@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="login-section" class="container hidden">
+    <h2>Iniciar Sesion</h2>
+    <div class="input-group" data-icon="👤">
+      <input type="text" id="username" placeholder="Usuario">
+    </div>
+    <div class="input-group" data-icon="🔒">
+      <input type="password" id="password" placeholder="Clave">
+    </div>
+    <button onclick="login()">Entrar</button>
+    <button class="secondary" onclick="showRegister()">Registrarse</button>
+  </div>
+
+  <div id="register-section" class="container hidden">
+    <h2>Registrarse</h2>
+    <div class="input-group" data-icon="👤">
+      <input type="text" id="newUsername" placeholder="Usuario">
+    </div>
+    <div class="input-group" data-icon="🔒">
+      <input type="password" id="newPassword" placeholder="Clave">
+    </div>
+    <button onclick="register()">Crear cuenta</button>
+    <button class="secondary" onclick="hideRegister()">Volver</button>
+  </div>
+
+  <div id="reservas-section" class="container hidden">
+    <h2>Reservas Pádel Club</h2>
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-content">
+          <h3>Cancha 1</h3>
+          <select id="horario1"></select>
+          <button id="btn1" onclick="reservar(1)">Reservar</button>
+          <ul id="lista1"></ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Cancha 2</h3>
+          <select id="horario2"></select>
+          <button id="btn2" onclick="reservar(2)">Reservar</button>
+          <ul id="lista2"></ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Cancha 3</h3>
+          <select id="horario3"></select>
+          <button id="btn3" onclick="reservar(3)">Reservar</button>
+          <ul id="lista3"></ul>
+        </div>
+      </div>
+    </div>
+    <div id="operator-dashboard" class="container hidden">
+      <h2>Panel Operador</h2>
+      <table id="reservations-table">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Cancha</th>
+            <th>Hora</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="reservations-body"></tbody>
+      </table>
+    </div>
+    <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+    <p class="frase">Viví tu experiencia como más te guste</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
